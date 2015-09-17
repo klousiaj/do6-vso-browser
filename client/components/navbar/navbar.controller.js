@@ -7,10 +7,9 @@ angular.module('do6VsoBrowserApp')
 
     $http.get('/api/projects/').success(function (sites) {
       for (var ii = 0; ii < sites.length; ii++) {
-        console.log('site: ' + sites[ii].name);
         var site = {
           'title': sites[ii].name,
-          'link': '/queries/' + sites[ii].id
+          'link': 'queries/' + sites[ii].id
         }
         $scope.menu[ii] = site;
       }

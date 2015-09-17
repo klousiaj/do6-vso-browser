@@ -22,7 +22,7 @@ var _queryList;
  * @project: the project name
  */
 exports.queries = function (req, res) {
-  var project = req.project || 'OjpApplicationMaintenance';
+  var project = req.query.project;
   _witApi.getQueries(project, 3, 2, false).done(function (response) {
     _queryList = [];
     response.forEach(function(branch){

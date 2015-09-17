@@ -4,7 +4,7 @@ angular.module('do6VsoBrowserApp')
   .config(function ($stateProvider) {
     $stateProvider
       .state('queries', {
-        url: '/',
+        url: '/queries/:projectId',
         templateUrl: 'app/queries/queries.html',
         controller: 'QueriesCtrl'
       });
