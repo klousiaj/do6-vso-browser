@@ -1,11 +1,11 @@
 'use strict';
 
-describe('Controller: MainCtrl', function () {
+describe('Controller: QueriesCtrl', function () {
 
   // load the controller's module
   beforeEach(module('do6VsoBrowserApp'));
 
-  var MainCtrl,
+  var QueriesCtrl,
       scope,
       $httpBackend;
 
@@ -16,7 +16,7 @@ describe('Controller: MainCtrl', function () {
       .respond(['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']);
 
     scope = $rootScope.$new();
-    MainCtrl = $controller('MainCtrl', {
+    QueriesCtrl = $controller('QueriesCtrl', {
       $scope: scope
     });
   }));
