@@ -22,8 +22,6 @@
   <!-- build:css({.tmp,client}) app/app.css -->
   <link rel="stylesheet" href="app/app.css">
   <!-- injector:css -->
-  <link rel="stylesheet" href="app/app.css">
-  <link rel="stylesheet" href="app/queries/queries.css">
   <!-- endinjector -->
   <!-- endbuild -->
 </head>
@@ -35,6 +33,13 @@
 
   <div ng-include="'components/navbar/navbar.html'"></div>
 
+  <header class="hero-unit" id="banner">
+    <div class="container">
+      <h1>VSO Browser</h1>
+      <p class="lead">see your work</p>
+      <img src="assets/images/vso.png" width="125px" height="125px" alt="I'm VSO">
+    </div>
+  </header>
   <!-- Add your site or application content here -->
   <div ui-view=""></div>
 

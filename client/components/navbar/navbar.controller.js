@@ -3,7 +3,11 @@
 angular.module('do6VsoBrowserApp')
     .controller('NavbarCtrl', function ($scope, $location, $http) {
     $scope.menu = [];
-    $scope.selectedSite = 'OjpApplicationMaintenance';
+    $scope.selectedSite = 'Select a Site...';
+    
+    $scope.updateSelectedSite = function(site){
+      $scope.selectedSite = site;
+    };
 
     $http.get('/api/projects/').success(function (sites) {
       for (var ii = 0; ii < sites.length; ii++) {
