@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-6">
+    <div class="col-lg-2">
       <h1 class="page-header">Queries:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="query in queries">
+      <ul class="nav nav-tabs nav-stacked" ng-repeat="query in queries">
         <li><a ui-sref="queries.pbis({queryId: query.id})">{{query.name}}</a></li>
       </ul>
     </div>
-    <div class="col-lg-6">
+    <div class="col-lg-10">
       <div ui-view=""></div>
     </div>
   </div>

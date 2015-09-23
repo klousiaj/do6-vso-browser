@@ -1,19 +1,23 @@
 'use strict';
 
 angular.module('do6VsoBrowserApp', [
+  'angular-loading-bar',
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ui.router',
-  'angular-loading-bar',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ui.grid',
+  'ui.grid.resizeColumns',
+  'ui.grid.exporter',
+  'ui.select',
+  'ui.router'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider
       .otherwise('/');
-
     $locationProvider.html5Mode(true);
   }).run(function ($rootScope) {
+    // these are here for debugging. Can/should be removed at some point.
     $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
       console.log('$stateChangeStart to ' + toState.to + '- fired when the transition begins. toState,toParams : \n', toState, toParams);
     });

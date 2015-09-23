@@ -3,14 +3,46 @@
 angular.module('do6VsoBrowserApp')
   .controller('PbisCtrl', function (projectId, $scope, $http, $stateParams, $q) {
     $scope.pbis = [];
+
+    $scope.types = {
+      selected: [],
+      values: []
+    };
     
+    $scope.assignees = {
+      selected: [],
+      values: []
+    };
+
+    // the gridOptions used to populate the ui-grid table
+    $scope.gridOptions = {
+      enableGridMenu: true,
+      showGridFooter: true,
+      showColumnFooter: true,
+      exporterPdfDefaultStyle: { fontSize: 9 },
+      exporterPdfTableStyle: { margin: [30, 30, 30, 30] },
+      exporterPdfTableHeaderStyle: { fontSize: 10, bold: true, italics: true, color: 'red' },
+      exporterPdfHeader: { text: "Work/User", style: 'headerStyle' },
+      exporterPdfFooter: function (currentPage, pageCount) {
+        return { text: currentPage.toString() + ' of ' + pageCount.toString(), style: 'footerStyle' };
+      },
+      exporterPdfCustomFormatter: function (docDefinition) {
+        docDefinition.styles.headerStyle = { fontSize: 22, bold: true };
+        docDefinition.styles.footerStyle = { fontSize: 10, bold: true };
+        return docDefinition;
+      },
+      exporterPdfOrientation: 'landscape',
+      exporterPdfPageSize: 'LETTER',
+      exporterPdfMaxGridWidth: 500
+    };
+
     console.log('this is the PBIs controller');
     console.log('pbis projectId: ' + projectId);
     
     // an array of promises that will be used to ensure that all of the data is available
     // before we do any summing of the data.
     var promiseArray = [];
-    
+
     $http.get('/api/workitems/query',
       {
         params: {
