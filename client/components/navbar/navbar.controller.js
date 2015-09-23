@@ -13,7 +13,7 @@ angular.module('do6VsoBrowserApp')
       for (var ii = 0; ii < sites.length; ii++) {
         var site = {
           'title': sites[ii].name,
-          'link': 'queries/' + sites[ii].id
+          'link': '/project/' + sites[ii].id
         }
         $scope.menu[ii] = site;
       }

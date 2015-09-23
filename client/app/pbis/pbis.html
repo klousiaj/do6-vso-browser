@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+      <h1 class="page-header">Backlog Items:</h1>
+      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="pbi in pbis">
+        <li>{{pbi.id}} - {{pbi.fields['System.Title']}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!--<div ng-controller="PbisCtrl">
+  <div ng-repeat="pbi in pbis">
+  </div>
+  <div class="row">
+    <ui-select multiple ng-model="pbiCtrl.types.selected" theme="bootstrap" on-remove="pbiCtrl.updateTableData()" 
+      on-select="pbiCtrl.updateTableData()">
+      <ui-select-match placeholder="Pick one...">{{$item}}</ui-select-match>
+      <ui-select-choices theme="bootstrap" repeat="wi in pbiCtrl.types.values | filter: $select.search ">
+        <div ng-bind-html="wi"></div>
+      </ui-select-choices>
+    </ui-select>
+    <ui-select multiple ng-model="pbiCtrl.assignees.selected" theme="bootstrap" on-remove="pbiCtrl.updateTableData()" 
+      on-select="pbiCtrl.updateTableData()">
+      <ui-select-match placeholder="Pick one...">{{$item}}</ui-select-match>
+      <ui-select-choices theme="bootstrap" repeat="wi in pbiCtrl.assignees.values | filter: $select.search">
+        <div ng-bind-html="wi"></div>
+      </ui-select-choices>
+    </ui-select>
+  </div>
+  <div class="row">
+    <div ui-grid="pbiCtrl.gridOptions" ui-grid-resize-columns ui-grid-exporter></div>
+  </div>-->
+</div>
