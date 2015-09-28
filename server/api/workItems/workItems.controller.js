@@ -74,6 +74,20 @@ var _itemFields = [
 
 // populateItemFields();
 
+var processQueryTree = function (branch) {
+  if (branch.hasChildren && typeof branch.children !== 'undefined') {
+    branch.children.forEach(function (rec) {
+      processQueryTree(rec);
+    });
+  } else if (typeof branch.isFolder === 'undefined') {
+    _queryList.push(branch);
+    // need to implement our own sort on this to compare the names for each of the queries.
+    _queryList.sort(function (a, b) {
+      return a.name < b.name ? -1 : 1;
+    });
+  }
+};
+
 /**
  * select the list of available queries.
  * @project: the project name
@@ -102,7 +116,7 @@ exports.queries = function (req, res) {
 exports.workitems = function (req, res) {
   var pbiIds = req.query.ids;
   var asOf = req.query.asOf || (new Date()).toISOString();
-  _witApi.getWorkItems(pbiIds, null, asOf).done(function (response) {
+  _witApi.getWorkItems(pbiIds, null, asOf, 'relations').done(function (response) {
     res.json(response);
   },
     function (error) {
@@ -142,18 +156,4 @@ exports.relationtypes = function (req, res) {
       console.log('in progress');
     });
 }
-
-var processQueryTree = function (branch) {
-  if (branch.hasChildren && typeof branch.children !== 'undefined') {
-    branch.children.forEach(function (rec) {
-      processQueryTree(rec);
-    });
-  } else if (typeof branch.isFolder === 'undefined') {
-    _queryList.push(branch);
-    // need to implement our own sort on this to compare the names for each of the queries.
-    _queryList.sort(function (a, b) {
-      return a.name < b.name ? -1 : 1;
-    });
-  }
-};
 

@@ -14,7 +14,7 @@ angular.module('do6VsoBrowserApp')
         var site = {
           'title': sites[ii].name,
           'link': '/project/' + sites[ii].id
-        }
+        };
         $scope.menu[ii] = site;
       }
     });

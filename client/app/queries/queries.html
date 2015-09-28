@@ -1,12 +1,27 @@
+<header class="hero-unit" id="banner">
+  <div class="container">
+    <h1>VSO Browser</h1>
+    <p class="lead">see your work</p>
+    <img src="assets/images/vso.png" width="125px" height="125px" alt="I'm VSO">
+  </div>
+</header>
 <div class="container">
   <div class="row">
-    <div class="col-lg-2">
-      <h1 class="page-header">Queries:</h1>
-      <ul class="nav nav-tabs nav-stacked" ng-repeat="query in queries">
-        <li><a ui-sref="queries.pbis({queryId: query.id})">{{query.name}}</a></li>
-      </ul>
+    <div class="wrap">
+      <div class="scrollbar">
+        <div class="handle">
+          <div class="mousearea"></div>
+        </div>
+      </div>
+      <div class="frame" id="basicSly">
+        <ul>
+          <li ng-repeat="query in queries" sly-horizontal-repeat ng-click="go(query.id)">{{query.name}}</li>
+        </ul>
+      </div>
     </div>
-    <div class="col-lg-10">
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
       <div ui-view=""></div>
     </div>
   </div>

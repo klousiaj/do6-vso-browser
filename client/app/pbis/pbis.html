@@ -1,15 +1,7 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-10">
-      <h1 class="page-header">Backlog Items:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="pbi in pbis">
-        <li>{{pbi.id}} - {{pbi.fields['System.Title']}}</li>
-      </ul>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-10">
-      <ui-select multiple ng-model="types.selected" theme="bootstrap" on-remove="updateTableData()" on-select="pbiCtrl.updateTableData()">
+    <div class="col-lg-12">
+      <ui-select multiple ng-model="types.selected" theme="bootstrap" on-remove="updateTableData()" on-select="updateTableData()">
         <ui-select-match placeholder="Pick one...">{{$item}}</ui-select-match>
         <ui-select-choices theme="bootstrap" repeat="wi in types.values | filter: $select.search ">
           <div ng-bind-html="wi"></div>
@@ -24,7 +16,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-lg-10">
+    <div class="col-lg-12">
       <div ui-grid="gridOptions" ui-grid-resize-columns ui-grid-exporter></div>
     </div>
   </div>

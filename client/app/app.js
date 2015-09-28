@@ -2,6 +2,7 @@
 
 var app = angular.module('do6VsoBrowserApp', [
   'angular-loading-bar',
+  'angular-sly',
   'ngCookies',
   'ngResource',
   'ngSanitize',
