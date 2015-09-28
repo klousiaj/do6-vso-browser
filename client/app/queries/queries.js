@@ -9,7 +9,6 @@ angular.module('do6VsoBrowserApp')
         controller: 'QueriesCtrl',
         resolve: {
           projectId: function ($stateParams) {
-            console.log('projectId:' + $stateParams.projectId);
             return $stateParams.projectId;
           }
         }

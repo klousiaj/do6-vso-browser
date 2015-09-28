@@ -12,10 +12,11 @@ angular.module('do6VsoBrowserApp')
       }).success(function (queries) {
         $scope.queries = queries;
       });
-      
+
     $scope.value = 0; 
-      
-    $scope.go = function(queryId) {
+
+    // update the state according to the chosen queryId
+    $scope.go = function (queryId) {
       var toParams = {
         queryId: queryId
       }
