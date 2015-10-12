@@ -1,17 +1,4 @@
 <div class="row">
-  <ui-select multiple ng-model="types.selected" theme="bootstrap" on-remove="updateTableData()" on-select="updateTableData()">
-    <ui-select-match placeholder="Pick one...">{{$item}}</ui-select-match>
-    <ui-select-choices theme="bootstrap" repeat="wi in types.values | filter: $select.search ">
-      <div ng-bind-html="wi"></div>
-    </ui-select-choices>
-  </ui-select>
-  <ui-select multiple ng-model="assignees.selected" theme="bootstrap" on-remove="updateTableData()" on-select="updateTableData()">
-    <ui-select-match placeholder="Pick one...">{{$item}}</ui-select-match>
-    <ui-select-choices theme="bootstrap" repeat="wi in assignees.values | filter: $select.search">
-      <div ng-bind-html="wi"></div>
-    </ui-select-choices>
-  </ui-select>
-</div>
-<div class="row">
-  <div ui-grid="gridOptions" ui-grid-resize-columns ui-grid-exporter></div>
+  <div ui-view="pbisTable"></div>
+  <div ui-view="featureChart"></div>
 </div>

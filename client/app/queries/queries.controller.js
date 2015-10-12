@@ -20,6 +20,6 @@ angular.module('do6VsoBrowserApp')
       var toParams = {
         queryId: queryId
       }
-      $state.go('queries.pbis', toParams);
+      $state.go('queries.pbis.data', toParams);
     }
   });
