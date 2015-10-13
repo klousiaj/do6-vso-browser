@@ -1,4 +1,4 @@
-# do6-vso-browser [![NPM version][npm-image]][npm-url] [![Build Status](https://travis-ci.org/klousiaj/do6-vso-browser.svg?branch=master)](https://travis-ci.org/klousiaj/do6-vso-browser)
+# do6-vso-browser [![NPM version][npm-image]][npm-url] [![Build Status](https://travis-ci.org/klousiaj/do6-vso-browser.svg?branch=master)](https://travis-ci.org/klousiaj/do6-vso-browser) [![Dependency Status](https://david-dm.org/klousiaj/do6-vso-browser.svg)](https://david-dm.org/klousiaj/do6-vso-browser)
 
 This project allows users to view TFS workitems without logging into TFS directly.
 
