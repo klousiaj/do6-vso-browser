@@ -5,13 +5,13 @@ angular.module('do6VsoBrowserApp')
     $stateProvider
       .state('queries.pbis', {
         abstract: true,
-        templateUrl: 'app/pbis/pbis.html',
-        controller: 'PbisCtrl'
+        templateUrl: 'app/pbis/pbis.html'
       }).state('queries.pbis.data', {
         url: '/:queryId',
         views: {
           'pbisTable': {
-            templateUrl: 'app/pbis/pbisTable.html'
+            templateUrl: 'app/pbis/pbisTable.html',
+            controller: 'PbisCtrl'
           },
           'featureChart': {
             templateUrl: 'app/featureChart/featureChart.html',
